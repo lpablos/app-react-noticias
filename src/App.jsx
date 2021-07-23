@@ -1,10 +1,14 @@
-import React from 'react'
+import React, {Fragment} from 'react'
+import Header from './components/Header'
 
 const App = () => {
   return (
-    <div>
-      <h3>Noticas app</h3>
-    </div>
+    <Fragment>
+      <Header titulo = 'App React Noticias'/>
+      <div className="container white">
+        <h1>Formulario</h1>
+      </div>
+    </Fragment>
   )
 }
 
