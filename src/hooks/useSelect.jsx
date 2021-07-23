@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 
-const useSelect = (stateInicial) => {
+const useSelect = (stateInicial, opciones) => {
     const [state, setState] = useState(stateInicial)
     const SelectNoticias = () =>(
         <select 
@@ -11,6 +11,9 @@ const useSelect = (stateInicial) => {
             value={state}            
         >
             <option value="">Selecciona</option>
+            { opciones.map( opt =>(
+                <option key={opt.value} value={opt.value}>{opt.label}</option>
+            ))}
         </select>
     )
     return [SelectNoticias]
