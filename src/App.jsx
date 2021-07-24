@@ -1,6 +1,7 @@
 import React, {Fragment, useState, useEffect} from 'react'
 import Header from './components/Header'
 import Formulario from './components/Formulario'
+import ListadoNoticias from './components/ListadoNoticias'
 import axios from 'axios'
 // e2e4e383ef114bc1ad90d8b3b24645a3
 const App = () => {
@@ -22,7 +23,11 @@ const App = () => {
       <Header titulo = 'App React Noticias'/>
       <div className="container white">
         <Formulario
-          setCategoria= {setCategoria}/>
+          setCategoria= {setCategoria}
+        />
+        <ListadoNoticias
+          noticias = { noticias }
+        />
       </div>
     </Fragment>
   )
