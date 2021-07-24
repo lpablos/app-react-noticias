@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const Noticia = ({nota}) => {
     const {urlToImage, url, title, description, source} = nota
@@ -30,6 +31,9 @@ const Noticia = ({nota}) => {
             </div>
         </div>
     )
+}
+Noticia.propTypes = {
+    nota : PropTypes.object.isRequired
 }
 
 export default Noticia
