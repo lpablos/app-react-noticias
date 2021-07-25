@@ -12,9 +12,12 @@ const App = () => {
   useEffect(() => {
     const consultarAPI = async() => {
       const url = `https://newsapi.org/v2/top-headlines?country=mx&category=${categoria}&apiKey=e2e4e383ef114bc1ad90d8b3b24645a3`;
-      const respuesta = await axios.get(url)
-      setNoticias(respuesta.data.articles)
-      // console.log("Esta es la respues de la peticion", respuesta.data);
+      const respuesta = await axios.get(url, {
+        headers: {
+            'Content-Type': 'application/json'
+        }
+      })
+      setNoticias(respuesta.data.articles)      
     }
     consultarAPI()
   }, [categoria])
